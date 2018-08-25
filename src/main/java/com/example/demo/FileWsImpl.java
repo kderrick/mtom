@@ -7,6 +7,7 @@ import java.io.InputStream;
 import java.io.OutputStream;
 
 import javax.activation.DataHandler;
+import javax.activation.FileDataSource;
 
 public class FileWsImpl implements FileWs {
 
@@ -32,7 +33,9 @@ public class FileWsImpl implements FileWs {
 
 	@Override
 	public DataHandler download() {
-		return null;
+		
+		return new DataHandler(new FileDataSource(new File("/Users/kylederrick/Desktop/files/test.jpg")));
+		
 	}
 
 }
